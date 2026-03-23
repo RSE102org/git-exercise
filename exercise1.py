@@ -3,7 +3,6 @@ from typing import List
 from math import isclose
 
 # Task A: see comment in function `test_vector_index_access`
-# Task B: see comment in function `test_3d_vector_subtraction`
 
 class Vector:
     def __init__(self, coordinates: List[float]) -> None:
@@ -45,5 +44,7 @@ def test_3d_vector_addition() -> None:
 
 
 def test_3d_vector_subtraction() -> None:
-    # Task B: add a test for vector subtraction
-    assert False
+    v = Vector([1.0, 2.0, 3.0]) - Vector([1.1, 2.2, 3.3])
+    assert isclose(v[0], -0.1)
+    assert isclose(v[1], -0.2)
+    assert isclose(v[2], -0.3)
